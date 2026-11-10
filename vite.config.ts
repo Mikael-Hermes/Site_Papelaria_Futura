@@ -4,5 +4,5 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/https://github.com/Mikael-Hermes/Site_Papelaria_Futura.git/'
+  base: '/Site_Papelaria_Futura/'
 })
