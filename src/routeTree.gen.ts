@@ -10,43 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as Other_pageRouteImport } from './routes/other_page'
+import { Route as ContatosRouteImport } from './routes/contatos'
+import { Route as ProdutosRouteImport } from './routes/produtos'
+import { Route as ServicosRouteImport } from './routes/servicos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Other_pageRoute = Other_pageRouteImport.update({
-  id: '/other_page',
-  path: '/other_page',
+const ContatosRoute = ContatosRouteImport.update({
+  id: '/contatos',
+  path: '/contatos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosRoute = ProdutosRouteImport.update({
+  id: '/produtos',
+  path: '/produtos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosRoute = ServicosRouteImport.update({
+  id: '/servicos',
+  path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/other_page': typeof Other_pageRoute
+  '/contatos': typeof ContatosRoute
+  '/produtos': typeof ProdutosRoute
+  '/servicos': typeof ServicosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/other_page': typeof Other_pageRoute
+  '/contatos': typeof ContatosRoute
+  '/produtos': typeof ProdutosRoute
+  '/servicos': typeof ServicosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/other_page': typeof Other_pageRoute
+  '/contatos': typeof ContatosRoute
+  '/produtos': typeof ProdutosRoute
+  '/servicos': typeof ServicosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/other_page'
+  fullPaths: '/' | '/contatos' | '/produtos' | '/servicos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/other_page'
-  id: '__root__' | '/' | '/other_page'
+  to: '/' | '/contatos' | '/produtos' | '/servicos'
+  id: '__root__' | '/' | '/contatos' | '/produtos' | '/servicos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  Other_pageRoute: typeof Other_pageRoute
+  ContatosRoute: typeof ContatosRoute
+  ProdutosRoute: typeof ProdutosRoute
+  ServicosRoute: typeof ServicosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +78,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/other_page': {
-      id: '/other_page'
-      path: '/other_page'
-      fullPath: '/other_page'
-      preLoaderRoute: typeof Other_pageRouteImport
+    '/contatos': {
+      id: '/contatos'
+      path: '/contatos'
+      fullPath: '/contatos'
+      preLoaderRoute: typeof ContatosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos': {
+      id: '/produtos'
+      path: '/produtos'
+      fullPath: '/produtos'
+      preLoaderRoute: typeof ProdutosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos': {
+      id: '/servicos'
+      path: '/servicos'
+      fullPath: '/servicos'
+      preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  Other_pageRoute: Other_pageRoute,
+  ContatosRoute: ContatosRoute,
+  ProdutosRoute: ProdutosRoute,
+  ServicosRoute: ServicosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

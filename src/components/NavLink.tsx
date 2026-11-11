@@ -15,7 +15,7 @@ function NavLink({text, href} : {text: string, href: string}) {
 
   return (
     <>
-      <Link to={href} className={"hover:text-stone-400 " + underline}>
+      <Link to={href} className={"text-base-fg hover:text-base-fade-fg hover:scale-110 mx-4 " + underline}>
         {text}
       </Link>
     </>

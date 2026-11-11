@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+
+
+@theme {
+    --color-base-dark-bg: var(--color-stone-950);
+    --color-base-bg: var(--color-stone-800);
+    --color-base-fg: var(--color-stone-50);
+    --color-base-fade-fg: var(--color-stone-400);
+}
+
+.heroImg {
+    width: 100%;
+    
+}
