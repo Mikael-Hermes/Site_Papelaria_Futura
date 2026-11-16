@@ -1,4 +1,4 @@
-
+import hero_img from "../assets/hero.jpg"
 
 function Hero() {
    
@@ -6,7 +6,7 @@ function Hero() {
 
   return (
     <>
-      <img src="src/assets/hero.jpg" className="heroImg"></img>
+      <img src={hero_img} className="heroImg"></img>
     </>
   )
 }

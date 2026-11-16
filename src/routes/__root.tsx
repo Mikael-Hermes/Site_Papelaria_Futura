@@ -1,6 +1,7 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import NavBar from '../components/NavBar'
 import WhatsappBubble from '../components/WhatsappBubble'
+import Footer from '../components/Footer'
 
 function RootComponent() {
     return (
@@ -10,6 +11,7 @@ function RootComponent() {
             <Outlet />
         </main>
         <WhatsappBubble />
+        <Footer />
         </>
     )
 }

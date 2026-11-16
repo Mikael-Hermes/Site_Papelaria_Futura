@@ -1,5 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Hero from '../components/Hero'
+import SobreNos from '../components/SobreNosTexto'
+import OpenCloseSection from '../components/OpenCloseSection'
+import CardLocalizacao from '../components/CardLocalizacao'
+
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -10,29 +14,25 @@ function RouteComponent() {
     <>
       <div className='relative'>
           <Hero />
-          <div className="absolute h-full inset-x-0 -bottom-px bg-linear-to-t/oklch from-base-bg via-base-bg/80 via-30% to-base-bg/0" />
+          <div className="absolute h-full inset-x-0 -bottom-px bg-linear-to-t/oklch from-base-dark-bg via-base-bg/80 via-30% to-base-dark-bg/0" />
       </div>
-      <div className='bg-base-bg text-base-fg flex items-center justify-center'>
+      <div className='bg-base-dark-bg text-base-fg flex items-center justify-center'>
         <div className='max-w-2/3 p-16 my-32'>
           <h1 className=' text-2xl p-4'>Sobre nós</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel luctus nunc. 
-            Aliquam erat volutpat. Pellentesque tempor viverra arcu vel mattis. Morbi at interdum metus. 
-            Curabitur vitae justo nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam 
-            vitae lorem et lectus vestibulum sagittis. Maecenas ut libero justo. Ut fringilla turpis massa, eu 
-            efficitur lorem tincidunt vel. In est libero, pellentesque eget interdum ac, aliquet nec ipsum. Nullam 
-            eu arcu ipsum. Donec aliquam felis sit amet enim ullamcorper egestas. Nunc id justo in sem lacinia interdum. 
-            Curabitur quis est non massa suscipit auctor a maximus ante. Nunc non rhoncus nulla. Proin sollicitudin mollis iaculis. 
-          </p>
-          
-          <p>
-            Curabitur iaculis lorem vitae sapien vehicula auctor. Vestibulum aliquam tincidunt mattis. Nam et libero vel orci eleifend 
-            hendrerit sit amet at dui. Nunc vitae blandit eros. Ut et gravida nibh. Nulla ullamcorper nisi tortor, ut finibus tellus 
-            ultricies ut. In sed faucibus orci. Praesent malesuada eleifend felis at dapibus. 
-          </p>
-
+          <SobreNos />
         </div>
       </div>
+
+      <section>
+        <OpenCloseSection extraClass='h-96' title='Produtos' link='/produtos' image='src/assets/LOGO FUTURA.png'></OpenCloseSection>
+        <OpenCloseSection extraClass='h-96' title='Serviços' link='/servicos' image='src/assets/LOGO FUTURA.png'></OpenCloseSection>
+        <OpenCloseSection extraClass='h-96' title='Contato' link='/contatos' image='src/assets/LOGO FUTURA.png'></OpenCloseSection>
+      </section>
+      
+      <div className='bg-base-dark-bg p-32 flex justify-center'>
+        <CardLocalizacao />
+      </div>
+      
     </>
   )
 }
